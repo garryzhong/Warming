@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hig-Ef-aOu">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Waming-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Warming" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Waming" id="RWK-91-H7g">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8U4-YS-hZl">
+                            <color key="tintColor" red="1" green="0.36425177118340613" blue="0.25766684892285574" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="5Sq-q3-mvN" kind="show" id="Mj5-Fz-oqy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772" y="993"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="qVP-jk-tnb">
+            <objects>
+                <viewController id="5Sq-q3-mvN" customClass="EditViewController" customModule="Warming" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VbY-oG-zGi"/>
+                        <viewControllerLayoutGuide type="bottom" id="OJ5-25-QYa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3LT-JU-7Py">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pvr-G4-85a">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="zeb-IB-tT7"/>
+                                    <barButtonItem title="取消" id="cZ0-MO-oB3">
+                                        <connections>
+                                            <action selector="cancel:" destination="5Sq-q3-mvN" id="8z0-KW-PtL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ybG-LS-Vlu"/>
+                                    <barButtonItem title="图片" id="S7u-05-J9i">
+                                        <connections>
+                                            <action selector="selectShotos:" destination="5Sq-q3-mvN" id="rCd-mG-RoP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="mro-Gi-rjG"/>
+                                    <barButtonItem title="提醒" id="I4J-xu-fg8">
+                                        <connections>
+                                            <segue destination="i4s-Gd-1Bf" kind="showDetail" identifier="SegueToWarmingController" id="dFL-Od-HmH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="amN-zG-2Cd"/>
+                                    <barButtonItem title="完成" id="6LJ-no-PXj"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qXx-OB-t9Q"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pvr-G4-85a" firstAttribute="bottom" secondItem="OJ5-25-QYa" secondAttribute="top" id="HCi-af-tSV"/>
+                            <constraint firstAttribute="trailing" secondItem="Pvr-G4-85a" secondAttribute="trailing" id="bcm-zX-pE5"/>
+                            <constraint firstItem="Pvr-G4-85a" firstAttribute="leading" secondItem="3LT-JU-7Py" secondAttribute="leading" id="jK0-Pd-89L"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" prompt="我想装逼..." id="pNX-pB-fDe">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title=" " id="lV6-Fr-nBA"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="e8P-9P-2rR">
+                            <rect key="frame" x="56" y="37" width="488" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" title=" " id="4Lw-wM-Iy2"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="baA-an-ukV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1464" y="993"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x3i-OH-UzY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hig-Ef-aOu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rfv-sc-0iV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="qT7-f0-35G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r2r-Mx-kTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78" y="993"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kf4-Ac-P5e">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i4s-Gd-1Bf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wwA-60-a8b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="acp-b7-GFM" kind="relationship" relationship="rootViewController" id="PbO-xJ-HFh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFl-uj-8pj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2172" y="993"/>
+        </scene>
+        <!--若这趟旅行若算开心，亦是无负这一生。-->
+        <scene sceneID="PwZ-ra-XVk">
+            <objects>
+                <tableViewController id="acp-b7-GFM" customClass="WarmingViewController" customModule="Warming" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="9ds-a1-RpA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="重复" id="8Ad-9a-cgI">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="36" id="P9U-hC-tBc">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P9U-hC-tBc" id="xVA-HK-Om2">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ruq-JF-RDm">
+                                                    <rect key="frame" x="8" y="4" width="584" height="29"/>
+                                                    <segments>
+                                                        <segment title="这次"/>
+                                                        <segment title="每天"/>
+                                                        <segment title="每周"/>
+                                                        <segment title="每月"/>
+                                                        <segment title="每年"/>
+                                                    </segments>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ruq-JF-RDm" firstAttribute="trailing" secondItem="xVA-HK-Om2" secondAttribute="trailingMargin" id="asV-5d-EZl"/>
+                                                <constraint firstItem="Ruq-JF-RDm" firstAttribute="leading" secondItem="xVA-HK-Om2" secondAttribute="leadingMargin" id="hhn-Fm-5AI"/>
+                                                <constraint firstAttribute="centerY" secondItem="Ruq-JF-RDm" secondAttribute="centerY" id="iLi-Ww-tss"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="提醒" id="MPC-aV-3CQ">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="36" id="Cab-y4-mZh">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cab-y4-mZh" id="sju-RB-CDg">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qaN-Qz-9I9">
+                                                    <rect key="frame" x="8" y="4" width="584" height="29"/>
+                                                    <segments>
+                                                        <segment title="On"/>
+                                                        <segment title="Off"/>
+                                                    </segments>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qaN-Qz-9I9" firstAttribute="trailing" secondItem="sju-RB-CDg" secondAttribute="trailingMargin" id="Nt5-kv-dZZ"/>
+                                                <constraint firstAttribute="centerY" secondItem="qaN-Qz-9I9" secondAttribute="centerY" id="TW7-jA-ok7"/>
+                                                <constraint firstItem="qaN-Qz-9I9" firstAttribute="leading" secondItem="sju-RB-CDg" secondAttribute="leadingMargin" id="rNt-PN-Ynl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="时间点" id="J8Y-aA-Jri">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="180" id="1NO-IP-1di">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1NO-IP-1di" id="U1Y-gb-vkw">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="oMi-oi-e9B">
+                                                    <rect key="frame" x="8" y="9" width="584" height="162"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="460467356.52496201">
+                                                        <!--2015-08-05 11:35:56 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="oMi-oi-e9B" secondAttribute="centerY" id="SC2-V2-3OB"/>
+                                                <constraint firstItem="oMi-oi-e9B" firstAttribute="leading" secondItem="U1Y-gb-vkw" secondAttribute="leadingMargin" id="VdG-HZ-bVs"/>
+                                                <constraint firstItem="oMi-oi-e9B" firstAttribute="trailing" secondItem="U1Y-gb-vkw" secondAttribute="trailingMargin" id="WeX-mx-lDR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="acp-b7-GFM" id="xwM-Mo-t85"/>
+                            <outlet property="delegate" destination="acp-b7-GFM" id="oeR-7Z-yJL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="若这趟旅行若算开心，亦是无负这一生。" prompt="提醒" id="kZC-qp-9rA">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="9SQ-4r-S0j">
+                            <connections>
+                                <action selector="cancel:" destination="acp-b7-GFM" id="ws9-oE-PUg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="oMi-oi-e9B" id="gqM-PU-d1Y"/>
+                        <outlet property="repeatTypeSegmentedControl" destination="Ruq-JF-RDm" id="Zn8-8N-IaS"/>
+                        <outlet property="warmingSegmentedControl" destination="qaN-Qz-9I9" id="GO9-Ez-TO7"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zAf-3h-yGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2882" y="993"/>
+        </scene>
+    </scenes>
+</document>
