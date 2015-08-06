@@ -9,29 +9,15 @@
 import UIKit
 
 class EditViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == SegueIdentifier.ToWarmingController.rawValue {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let warmingController = navigationController.viewControllers.first as! WarmingViewController
+            warmingController.delegate = self
+        }
     }
-    */
-
 }
 
 // MARK: - Action
@@ -50,5 +36,12 @@ extension EditViewController: UIImagePickerControllerDelegate, UINavigationContr
     
     @IBAction func cancel(sender: UIBarButtonItem) {
         navigationController?.popViewControllerAnimated(true)
+    }
+}
+
+// MARK: - WarmingViewControllerDelegate
+extension EditViewController: WarmingViewControllerDelegate {
+    func didFinishSelectRepeatType(type: WarmingRepeatType, isWarmingOn: Bool, WarmingDate: NSDate) {
+        
     }
 }

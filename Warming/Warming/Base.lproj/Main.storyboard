@@ -199,11 +199,12 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1NO-IP-1di" id="U1Y-gb-vkw">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="oMi-oi-e9B">
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="oMi-oi-e9B">
                                                     <rect key="frame" x="8" y="9" width="584" height="162"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="460467356.52496201">
                                                         <!--2015-08-05 11:35:56 +0000-->
                                                     </date>
+                                                    <locale key="locale" localeIdentifier="zh-Hans"/>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
