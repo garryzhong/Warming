@@ -18,6 +18,8 @@
 		B1D0342D1B7231D5008F114D /* WarmingEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0342C1B7231D5008F114D /* WarmingEnum.swift */; };
 		B1D034331B723BA0008F114D /* SegueIdentifierEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D034321B723BA0008F114D /* SegueIdentifierEnum.swift */; };
 		B1D034361B723DAD008F114D /* DBExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D034351B723DAD008F114D /* DBExecutor.swift */; };
+		B1D0368A1B73804B008F114D /* DatabaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D036891B73804B008F114D /* DatabaseExtension.swift */; };
+		B1D0368D1B7386A9008F114D /* NoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0368C1B7386A9008F114D /* NoteEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		B1D0342C1B7231D5008F114D /* WarmingEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarmingEnum.swift; sourceTree = "<group>"; };
 		B1D034321B723BA0008F114D /* SegueIdentifierEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueIdentifierEnum.swift; sourceTree = "<group>"; };
 		B1D034351B723DAD008F114D /* DBExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBExecutor.swift; sourceTree = "<group>"; };
+		B1D036891B73804B008F114D /* DatabaseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseExtension.swift; sourceTree = "<group>"; };
+		B1D0368C1B7386A9008F114D /* NoteEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEntity.swift; sourceTree = "<group>"; };
 		B4A127C43900268B004D31E5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,9 +178,19 @@
 		B1D034341B723D93008F114D /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				B1D0368B1B738694008F114D /* Entity */,
 				B1D034351B723DAD008F114D /* DBExecutor.swift */,
+				B1D036891B73804B008F114D /* DatabaseExtension.swift */,
 			);
 			name = Database;
+			sourceTree = "<group>";
+		};
+		B1D0368B1B738694008F114D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B1D0368C1B7386A9008F114D /* NoteEntity.swift */,
+			);
+			name = Entity;
 			sourceTree = "<group>";
 		};
 		C9FD7C22FB32D885FCE1ABAD /* Pods */ = {
@@ -353,6 +367,8 @@
 				B1D0341B1B722775008F114D /* EditViewController.swift in Sources */,
 				B1D0342D1B7231D5008F114D /* WarmingEnum.swift in Sources */,
 				B1D033F71B7223D5008F114D /* AppDelegate.swift in Sources */,
+				B1D0368D1B7386A9008F114D /* NoteEntity.swift in Sources */,
+				B1D0368A1B73804B008F114D /* DatabaseExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
