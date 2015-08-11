@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		417AAE5F32A37F0C0550E8F6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E332B7F859164FB753EB313 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B11384261B78D6CA00F89A60 /* TableNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11384251B78D6CA00F89A60 /* TableNote.swift */; };
 		B1D033F71B7223D5008F114D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D033F61B7223D5008F114D /* AppDelegate.swift */; };
 		B1D033FC1B7223D5008F114D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D033FA1B7223D5008F114D /* Main.storyboard */; };
 		B1D033FE1B7223D5008F114D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1D033FD1B7223D5008F114D /* Images.xcassets */; };
@@ -18,8 +19,6 @@
 		B1D0342D1B7231D5008F114D /* WarmingEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0342C1B7231D5008F114D /* WarmingEnum.swift */; };
 		B1D034331B723BA0008F114D /* SegueIdentifierEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D034321B723BA0008F114D /* SegueIdentifierEnum.swift */; };
 		B1D034361B723DAD008F114D /* DBExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D034351B723DAD008F114D /* DBExecutor.swift */; };
-		B1D0368A1B73804B008F114D /* DatabaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D036891B73804B008F114D /* DatabaseExtension.swift */; };
-		B1D0368D1B7386A9008F114D /* NoteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0368C1B7386A9008F114D /* NoteEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +34,7 @@
 /* Begin PBXFileReference section */
 		311744B8AE93F929E9E5C0C2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8E332B7F859164FB753EB313 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B11384251B78D6CA00F89A60 /* TableNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableNote.swift; sourceTree = "<group>"; };
 		B1D033F11B7223D5008F114D /* Warming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Warming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D033F51B7223D5008F114D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1D033F61B7223D5008F114D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,8 +49,6 @@
 		B1D0342C1B7231D5008F114D /* WarmingEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarmingEnum.swift; sourceTree = "<group>"; };
 		B1D034321B723BA0008F114D /* SegueIdentifierEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueIdentifierEnum.swift; sourceTree = "<group>"; };
 		B1D034351B723DAD008F114D /* DBExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBExecutor.swift; sourceTree = "<group>"; };
-		B1D036891B73804B008F114D /* DatabaseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseExtension.swift; sourceTree = "<group>"; };
-		B1D0368C1B7386A9008F114D /* NoteEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEntity.swift; sourceTree = "<group>"; };
 		B4A127C43900268B004D31E5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,19 +176,10 @@
 		B1D034341B723D93008F114D /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				B1D0368B1B738694008F114D /* Entity */,
 				B1D034351B723DAD008F114D /* DBExecutor.swift */,
-				B1D036891B73804B008F114D /* DatabaseExtension.swift */,
+				B11384251B78D6CA00F89A60 /* TableNote.swift */,
 			);
 			name = Database;
-			sourceTree = "<group>";
-		};
-		B1D0368B1B738694008F114D /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				B1D0368C1B7386A9008F114D /* NoteEntity.swift */,
-			);
-			name = Entity;
 			sourceTree = "<group>";
 		};
 		C9FD7C22FB32D885FCE1ABAD /* Pods */ = {
@@ -367,8 +356,7 @@
 				B1D0341B1B722775008F114D /* EditViewController.swift in Sources */,
 				B1D0342D1B7231D5008F114D /* WarmingEnum.swift in Sources */,
 				B1D033F71B7223D5008F114D /* AppDelegate.swift in Sources */,
-				B1D0368D1B7386A9008F114D /* NoteEntity.swift in Sources */,
-				B1D0368A1B73804B008F114D /* DatabaseExtension.swift in Sources */,
+				B11384261B78D6CA00F89A60 /* TableNote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

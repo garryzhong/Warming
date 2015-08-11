@@ -20,18 +20,28 @@
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Warming/EditViewController.swift"
-            timestampString = "460471553.144622"
+            filePath = "Warming/TableNote.swift"
+            timestampString = "460908470.654408"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "didFinishSelectRepeatType(_:isWarmingOn:WarmingDate:)"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "insertOrReplaceWithEntity(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

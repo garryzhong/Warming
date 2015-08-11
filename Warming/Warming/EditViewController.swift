@@ -9,14 +9,10 @@
 import UIKit
 
 class EditViewController: UIViewController {
+    @IBOutlet weak var contentTextView: UITextView!
+    @IBOutlet weak var noteTitleTextField: UITextField!
     
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == SegueIdentifier.ToWarmingController.rawValue {
-            let navigationController = segue.destinationViewController as! UINavigationController
-            let warmingController = navigationController.viewControllers.first as! WarmingViewController
-            warmingController.delegate = self
-        }
+    override func viewDidLoad() {
     }
 }
 
@@ -37,11 +33,23 @@ extension EditViewController: UIImagePickerControllerDelegate, UINavigationContr
     @IBAction func cancel(sender: UIBarButtonItem) {
         navigationController?.popViewControllerAnimated(true)
     }
+    
+    @IBAction func finish(sender: UIBarButtonItem) {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == SegueIdentifier.ToWarmingController.rawValue {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let warmingController = navigationController.viewControllers.first as! WarmingViewController
+            warmingController.delegate = self
+        }
+    }
 }
 
 // MARK: - WarmingViewControllerDelegate
 extension EditViewController: WarmingViewControllerDelegate {
-    func didFinishSelectRepeatType(type: WarmingRepeatType, isWarmingOn: Bool, WarmingDate: NSDate) {
-        
+    func didFinishSelectRepeatType(type: WarmingRepeatType, isWarmingOn: Bool, warmingDate: NSDate) {
     }
 }
+

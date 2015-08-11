@@ -9,7 +9,7 @@
 import UIKit
 
 protocol WarmingViewControllerDelegate : class {
-    func didFinishSelectRepeatType(type: WarmingRepeatType, isWarmingOn: Bool, WarmingDate: NSDate)
+    func didFinishSelectRepeatType(type: WarmingRepeatType, isWarmingOn: Bool, warmingDate: NSDate)
 }
 
 class WarmingViewController: UITableViewController {
@@ -26,7 +26,7 @@ extension WarmingViewController {
             let repeatType = WarmingRepeatType(rawValue: repeatTypeSegmentedControl.selectedSegmentIndex)!
             let isWarmingON = warmingSegmentedControl.selectedSegmentIndex == 0 ? true : false
             let date = datePicker.date
-            d.didFinishSelectRepeatType(repeatType, isWarmingOn: isWarmingON, WarmingDate: date)
+            d.didFinishSelectRepeatType(repeatType, isWarmingOn: isWarmingON, warmingDate: date)
         }
         navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }

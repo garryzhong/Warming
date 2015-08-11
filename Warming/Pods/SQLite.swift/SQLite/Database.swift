@@ -610,6 +610,7 @@ public final class Database {
     }
 
     internal func try(block: () -> Int32) {
+        
         perform { if block() != SQLITE_OK { assertionFailure("\(self.lastError!)") } }
     }
 
