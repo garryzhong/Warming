@@ -9,26 +9,17 @@
 import SQLite
 
 class DBExecutor: NSObject {
-    let db: Database
+    static let db = Database(NSTemporaryDirectory() + "Warming.db")
     
-    private static let sharedInstance = DBExecutor()
-    class var sharedExecutor: DBExecutor {
-        return sharedInstance
-    }
-    
-    private override init() {
-        db = Database(NSTemporaryDirectory() + "Warming.db")
-    }
-    
-    func createTableIfNotExistWithTable(table: Query, block: SchemaBuilder -> Void) {
+    class func createTableIfNotExistWithTable(table: Query, block: SchemaBuilder -> Void) {
         db.create(table: table, temporary: false, ifNotExists: true, block)
     }
 
-    func insertOrReplaceWithTable(table: Query, values: [Setter]) -> Int64 {
+    class func insertOrReplaceWithTable(table: Query, values: [Setter]) -> Int64 {
         if let id = table.insert(or: Query.OnConflict.Replace, values).rowid {
             return id
         } else {
-            NSLog("insert or replace error")
+            println(db.lastError!)
             return -1
         }
     }
