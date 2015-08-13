@@ -6,10 +6,15 @@
 //  Copyright (c) 2015年 ZhongGarry. All rights reserved.
 //
 
+enum DBCode {
+    case OperationSuccess(Int64)
+    case OperationFailed
+}
+
 import SQLite
 
 class DBExecutor: NSObject {
-    static let db = Database(NSTemporaryDirectory() + "Warming.db")
+    static let db = Database(NSHomeDirectory() + "Warming.db")
     
     class func createTableIfNotExistWithTable(table: Query, block: SchemaBuilder -> Void) {
         db.create(table: table, temporary: false, ifNotExists: true, block)
@@ -19,12 +24,12 @@ class DBExecutor: NSObject {
         db.create(index: table, unique: false, ifNotExists: true, on: value)
     }
 
-    class func insertOrReplaceWithTable(table: Query, values: [Setter]) -> Int64 {
+    class func insertOrReplaceWithTable(table: Query, values: [Setter]) -> DBCode {
         if let id = table.insert(or: Query.OnConflict.Replace, values).rowid {
-            return id
+            return .OperationSuccess(id)
         } else {
             println(db.lastError!)
-            return -1
+            return .OperationFailed
         }
     }
 }

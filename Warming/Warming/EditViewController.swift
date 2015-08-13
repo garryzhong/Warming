@@ -12,7 +12,18 @@ class EditViewController: UIViewController {
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var noteTitleTextField: UITextField!
     
-    override func viewDidLoad() {
+    var repeatType: WarmingRepeatType = .Once
+    var isWarmingOn: Bool = false
+    var warmingDate: NSDate?
+    
+    var tempEntity: NoteEntity? {
+        didSet(new) {
+            noteTitleTextField.text = new?.title
+            contentTextView.text = new?.content
+            repeatType = new!.repeatType
+            isWarmingOn = new!.isWarmingOn
+            warmingDate = new?.warmingDate
+        }
     }
 }
 
@@ -36,6 +47,7 @@ extension EditViewController: UIImagePickerControllerDelegate, UINavigationContr
     
     @IBAction func finish(sender: UIBarButtonItem) {
         navigationController?.popViewControllerAnimated(true)
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -50,6 +62,9 @@ extension EditViewController: UIImagePickerControllerDelegate, UINavigationContr
 // MARK: - WarmingViewControllerDelegate
 extension EditViewController: WarmingViewControllerDelegate {
     func didFinishSelectRepeatType(type: WarmingRepeatType, isWarmingOn: Bool, warmingDate: NSDate) {
+        repeatType = type
+        self.isWarmingOn = isWarmingOn
+        self.warmingDate = warmingDate
     }
 }
 

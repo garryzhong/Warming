@@ -17,6 +17,12 @@ struct NoteEntity {
     let warmingDate: NSDate?
     let createAt: NSDate
     let updateAt: NSDate
+    
+    func newWithNoteId(id: Int64) -> NoteEntity {
+        var temp = self
+        temp.noteId = id
+        return temp
+    }
 }
 
 class TableNote: NSObject {
@@ -30,7 +36,9 @@ class TableNote: NSObject {
     private static let warmingDate = Expression<NSDate?>("warmingDate")
     private static let createAt = Expression<NSDate>("create")
     private static let updateAt = Expression<NSDate>("updateAt")
-    
+}
+
+extension TableNote {
     class func createTableAndIndexIfNoeExist() {
         DBExecutor.createTableIfNotExistWithTable(note) { table in
             table.column(self.noteId, primaryKey: true)
@@ -44,8 +52,8 @@ class TableNote: NSObject {
         }
         DBExecutor.createIndexIfNotExistWithTable(note, value: title)
     }
-
-    class func insertOrReplaceWithEntity(entity: NoteEntity) {
+    
+    class func insertOrReplaceWithEntity(entity: NoteEntity) -> (DBCode, NoteEntity?) {
         var values = [
             title <- entity.title,
             content <- entity.content,
@@ -55,14 +63,14 @@ class TableNote: NSObject {
             createAt <- entity.createAt,
             updateAt <- entity.updateAt
         ]
-        if entity.noteId != nil {
-            values.append(noteId <- entity.noteId!)
+        if let id = entity.noteId {
+            values.append(noteId <- id)
         }
-        DBExecutor.insertOrReplaceWithTable(note, values: values)
-    }
-    class func test() {
-        let entity = NoteEntity(noteId: 4, title: "titile1", content: "content", repeatType: .Once, isWarmingOn: true, warmingDate: nil, createAt: NSDate(), updateAt: NSDate())
-        insertOrReplaceWithEntity(entity)
-        
+        switch DBExecutor.insertOrReplaceWithTable(note, values: values) {
+        case .OperationFailed:
+            return (.OperationFailed, nil)
+        case .OperationSuccess(let id):
+            return (.OperationSuccess(id), entity.newWithNoteId(id))
+        }
     }
 }
