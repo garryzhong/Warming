@@ -31,7 +31,7 @@ class TableNote: NSObject {
     private static let createAt = Expression<NSDate>("create")
     private static let updateAt = Expression<NSDate>("updateAt")
     
-    class func createTableIfNoeExist() {
+    class func createTableAndIndexIfNoeExist() {
         DBExecutor.createTableIfNotExistWithTable(note) { table in
             table.column(self.noteId, primaryKey: true)
             table.column(self.title)
@@ -42,6 +42,7 @@ class TableNote: NSObject {
             table.column(self.createAt)
             table.column(self.updateAt)
         }
+        DBExecutor.createIndexIfNotExistWithTable(note, value: title)
     }
 
     class func insertOrReplaceWithEntity(entity: NoteEntity) {

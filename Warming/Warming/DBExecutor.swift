@@ -14,6 +14,10 @@ class DBExecutor: NSObject {
     class func createTableIfNotExistWithTable(table: Query, block: SchemaBuilder -> Void) {
         db.create(table: table, temporary: false, ifNotExists: true, block)
     }
+    
+    class func createIndexIfNotExistWithTable(table: Query, value: Expressible) {
+        db.create(index: table, unique: false, ifNotExists: true, on: value)
+    }
 
     class func insertOrReplaceWithTable(table: Query, values: [Setter]) -> Int64 {
         if let id = table.insert(or: Query.OnConflict.Replace, values).rowid {
